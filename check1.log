@@ -1,0 +1,112 @@
+ Image hw3-test-59456-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 512B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 416B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 1.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 78B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/library/python:3.13-slim@sha256:7249d5587b78209a006dc4a3b5340678f84ea729239193aa559962cd8c1fce50
+#6 resolve docker.io/library/python:3.13-slim@sha256:7249d5587b78209a006dc4a3b5340678f84ea729239193aa559962cd8c1fce50 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 94B done
+#5 DONE 0.0s
+
+#7 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [5/6] COPY app/app.py .
+#8 CACHED
+
+#9 [2/6] WORKDIR /app
+#9 CACHED
+
+#10 [3/6] COPY app/requirements.txt .
+#10 CACHED
+
+#11 [6/6] RUN groupadd -g 10001 appuser &&     useradd -u 10001 -g 10001 appuser &&     mkdir -p /data &&     chown appuser:appuser /data
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:dca23bf338ddce7561397319a6920c0aeb9445c0cd3c0aec6050102d24644faf 0.0s done
+#12 exporting config sha256:24fde7e9b48214dba4c58fa5196ab688f1b721e49fd1eb7f442d098ad914fb5d done
+#12 exporting attestation manifest sha256:e00a8e6766f77209983fbecf1bd140602d516d2872497ce97129d5fff87eee67 done
+#12 exporting manifest list sha256:6da9d8969138db848bb1646264c3a97eec60be38806bd70660405a4b5aa4568b done
+#12 naming to docker.io/library/hw3-test-59456-app:latest done
+#12 unpacking to docker.io/library/hw3-test-59456-app:latest done
+#12 DONE 0.1s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image hw3-test-59456-app Built 
+ Network hw3-test-59456_default Creating 
+ Network hw3-test-59456_default Creating 
+ Volume hw3-test-59456_redis_data Creating 
+ Volume hw3-test-59456_redis_data Creating 
+ Volume hw3-test-59456_redis_data Created 
+ Volume hw3-test-59456_redis_data Created 
+ Network hw3-test-59456_default Created 
+ Network hw3-test-59456_default Created 
+ Container hw3-test-59456-redis-1 Creating 
+ Container hw3-test-59456-redis-1 Created 
+ Container hw3-test-59456-app-1 Creating 
+ Container hw3-test-59456-app-1 Created 
+ Container hw3-test-59456-redis-1 Starting 
+ Container hw3-test-59456-redis-1 Started 
+ Container hw3-test-59456-redis-1 Waiting 
+ Container hw3-test-59456-redis-1 Healthy 
+ Container hw3-test-59456-app-1 Starting 
+ Container hw3-test-59456-app-1 Started 
+ Container hw3-test-59456-redis-1 Waiting 
+ Container hw3-test-59456-app-1 Waiting 
+ Container hw3-test-59456-redis-1 Healthy 
+ Container hw3-test-59456-app-1 Healthy 
+Initial counter: 0
+{"greeting": "Hello, HSE!", "count": 1, "hostname": "cd5b47deb23d", "storage": "redis"}
+{"greeting": "Hello, HSE!", "count": 2, "hostname": "cd5b47deb23d", "storage": "redis"}
+{"greeting": "Hello, HSE!", "count": 3, "hostname": "cd5b47deb23d", "storage": "redis"}
+Counter after increments: 3
+ Container hw3-test-59456-app-1 Recreate 
+ Container hw3-test-59456-app-1 Recreated 
+ Container hw3-test-59456-app-1 Starting 
+ Container hw3-test-59456-app-1 Started 
+Counter survived app recreation
+ Container hw3-test-59456-redis-1 Stopping 
+ Container hw3-test-59456-redis-1 Stopped 
+Redis failure checks passed
+ Container hw3-test-59456-redis-1 Starting 
+ Container hw3-test-59456-redis-1 Started 
+{"greeting": "Hello, HSE!", "count": 4, "hostname": "5de21fd7e5d2", "storage": "redis"}
+Redis recovery passed
+ Container hw3-test-59456-app-1 Stopping 
+ Container hw3-test-59456-app-1 Stopped 
+ Container hw3-test-59456-redis-1 Stopping 
+ Container hw3-test-59456-redis-1 Stopped 
+Backup created: /Users/limitiym/hw_3_template/backups/hw3-test-59456.tar.gz
+ Container hw3-test-59456-redis-1 Stopping 
+ Container hw3-test-59456-app-1 Stopping 
+ Container hw3-test-59456-app-1 Stopped 
+ Container hw3-test-59456-app-1 Removing 
+ Container hw3-test-59456-redis-1 Stopped 
+ Container hw3-test-59456-redis-1 Removing 
+ Container hw3-test-59456-app-1 Removed 
+ Container hw3-test-59456-redis-1 Removed 
+ Network hw3-test-59456_default Removing 
+ Volume hw3-test-59456_redis_data Removing 
+ Volume hw3-test-59456_redis_data Removed 
+ Network hw3-test-59456_default Removed 
+ALL CHECKS PASSED
